@@ -60,5 +60,7 @@ toLogout.addEventListener("click", () => {
 function logOut() {
   localStorage.removeItem("access_token");
   localStorage.removeItem("rememberMe");
+  localStorage.removeItem("firstName");
+
   window.location.href = "./login.html";
 }
