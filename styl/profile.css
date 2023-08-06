@@ -1,0 +1,49 @@
+.background {
+  width: 100%;
+  width: 100%;
+  background-image: url("../images/png/image69.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main > p {
+  margin-bottom: 48px;
+  margin-top: 88px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #190f27;
+}
+.userContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 528px;
+}
+
+#goBack > a {
+  color: #64606a;
+}
+
+.goodbye {
+  font-size: 14px;
+  color: #64606a;
+}
+
+.logout {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+.lineBackground {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  height: 30vw;
+}
+.footer p {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,86 @@
+.background {
+  background-image: url("../images/webp/background1.webp");
+}
+.confirm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 528px;
+  font-size: 24px;
+}
+
+a.link {
+  border-bottom: 3px solid #64606a;
+  text-decoration: none;
+  font-size: 14px;
+  color: #64606a;
+}
+
+.title {
+  color: #190f27;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.06px;
+  margin-top: 236px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #64606a;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.toLogin {
+  margin-top: 40px;
+  margin-bottom: 49px;
+  display: flex;
+  max-width: 528px;
+  min-width: 250px;
+  padding: 24px 154px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: rgb(255, 105, 57);
+  color: rgb(25, 15, 39);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  border: 8px solid rgb(255, 105, 57);
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+}
+.footer a {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-top: 40px;
+  }
+  .confirm {
+    margin: none;
+  }
+  .toLogin {
+    margin-bottom: 16px;
+  }
+  .footer > p {
+    font-size: 14px;
+  }
+  .confirm .toLogin {
+    font-size: 18px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1020px) {
+  .confirm .toLogin {
+    padding: 24px 100px;
+  }
+}
+/* padding to fix too big button in bottom section!!! */

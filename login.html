@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styl/login.css" />
+    <link rel="stylesheet" href="./styl/global.css" />
+
+    <title>Log in</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/png/favicon.ico"
+      size="32x32"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="left">
+        <div class="notification">
+          <p>
+            Takie konto nie istnieje.
+            <a href="./index.html">Zarejestruj sie tutaj.</a>
+          </p>
+        </div>
+        <div class="login">
+          <p>Zaloguj się</p>
+
+          <div class="tooltip-container">
+            <button class="fb">
+              <img src="./images/webp/fb.webp" /> Logowanie przez Facebook<span
+                >&nbsp</span
+              >
+              <span class="uil uil-question-circle"></span>
+
+              <div class="tooltip">
+                <p>This option is not yet available. We are working on it!</p>
+              </div>
+            </button>
+          </div>
+          <div class="tooltip-container">
+            <button class="ig">
+              <img src="./images/webp/insta.webp" /> Logowanie przez Instagram
+              <span>&nbsp</span>
+              <span class="uil uil-question-circle"></span>
+
+              <div class="tooltip">
+                <p>This option is not yet available. We are working on it!</p>
+              </div>
+            </button>
+          </div>
+          <div class="line">
+            <div class="lineBackground"><p>Lub za pomocą maila</p></div>
+          </div>
+          <form id="form">
+            <div class="loginDetails">
+              <div class="input">
+                <label for="" class="label">Email Address</label>
+                <input type="text" id="email" placeholder="email@domain.com" />
+                <div id="emailError" class="validationError">
+                  Błędny adres email.
+                </div>
+              </div>
+              <div class="input">
+                <label for="" class="label">Password</label>
+                <input type="password" id="password" placeholder="Password" />
+                <i class="uil uil-eye-slash pw_hide"></i>
+                <div id="passwordError" class="validationError">
+                  Double-check your password and try again.
+                </div>
+              </div>
+            </div>
+            <div class="bottomSection">
+              <div id="rememberMeBox">
+                <div>
+                  <input type="checkbox" id="rememberMe" />
+                  <label for=""> Remember me </label>
+                </div>
+                <div class="forgotPasswordLink">
+                  <a href="./reset-password.html">Forgot password</a>
+                </div>
+              </div>
+              <button class="submit" type="submit">Zaloguj sie</button>
+              <div class="line">
+                <div class="lineBackground"></div>
+              </div>
+              <div class="footer">
+                <p>
+                  Nie masz jeszcze konta?
+                  <a href="./index.html">Zarejestruj sie</a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="right">
+        <div class="background">
+          <div class="backgroundLogo">
+            <img src="./images/png/paper.png" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>

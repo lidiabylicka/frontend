@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm email</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/png/favicon.ico"
+      size="32x32"
+    />
+    <link rel="stylesheet" href="./styl/confirm-email.css" />
+    <link rel="stylesheet" href="./styl/global.css" />
+  </head>
+  <body>
+    <main>
+      <div class="left">
+        <div class="confirm">
+          <p class="title">Check your inbox!</p>
+          <p class="subtitle">
+            Sesja wygasla lub konto zostalo juz wczesniej zatwierdzone. W razie
+            dalszych problemow skontaktuj sie z nami.
+            <!-- `Wysłaliśmy właśnie do Ciebie link na adres: ${email}. Otwórz link,
+            by móc dokończyć rejestrację i dokonać logowania.` -->
+          </p>
+          <button class="toLogin" type="button">OK</button>
+          <div class="line">
+            <div class="lineBackground"></div>
+          </div>
+          <div class="footer">
+            <p>Wiadomość nie dotarła? <a href="">Wyślij jeszcze raz</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="background"></div>
+        <div class="backgroundLogo">
+          <img src="./images/png/paper.png" alt="" />
+        </div>
+      </div>
+    </main>
+    <script src="./confirm-email.js"></script>
+  </body>
+</html>

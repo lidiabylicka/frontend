@@ -1,0 +1,254 @@
+.background {
+  background-image: url("../images/png/image69.png");
+}
+
+.loginDetails {
+  margin-top: 32px;
+}
+.login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  font-size: 24px;
+}
+.login > p {
+  margin-bottom: 48px;
+  margin-top: 88px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #190f27;
+}
+.login button {
+  align-items: center;
+  border: 2px solid #284642;
+  height: 50px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  width: 100%;
+  border: 1.5px solid #284642;
+  color: #190f27;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 17px;
+  display: flex;
+  justify-content: center;
+}
+
+.login button > img {
+  padding-right: 20px;
+}
+.login .ig {
+  margin-bottom: 32px;
+}
+.lineBackground > p {
+  color: #190f27;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.88px;
+  letter-spacing: -0.057px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 179px;
+}
+
+.login button:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+.lineBackground {
+  margin-bottom: 32px;
+}
+.bottomSection > button {
+  display: flex;
+  width: 100%;
+  max-width: 528px;
+  min-width: 250px;
+  padding: 24px 154px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #ff6939;
+  color: #190f27;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  border: 8px solid #ff6939;
+  margin-bottom: 32px;
+}
+.input {
+  margin-bottom: 16px;
+}
+#rememberMeBox {
+  color: #64606a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  display: flex;
+  align-items: baseline;
+  align-content: center;
+  margin-bottom: 26px;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: right;
+}
+#rememberMeBox a {
+  text-decoration: underline;
+  font-weight: bolder;
+  cursor: pointer;
+}
+#rememberMeBox input {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 1px solid #284642;
+  margin-right: 12px;
+  margin-top: 17px;
+  cursor: pointer;
+  top: 5px;
+  position: relative;
+}
+
+#rememberMeBox > input:focus {
+  outline: none;
+}
+
+label[for="rememberCheckbox"] {
+  content: "";
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 30px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: #64606a;
+}
+
+label[for="rememberCheckbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* dorownanie do lewej strony */
+  top: 50%;
+  display: inline-block;
+  transform: translate(-50%);
+  border: 2px solid #aaa;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:checked + label[for="rememberCheckbox"]::before {
+  /* po lewej - wykrywa ze klikniety, po prawej - dodanie dodatkowych list-style-image: ; */
+  content: "\2713";
+  background-color: #284642;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px; /* uklada text na poziomie vertykalnym */
+  color: white;
+}
+
+a,
+.register {
+  font-size: 14px;
+  color: #64606a;
+}
+
+.inline {
+  display: inline;
+}
+.bottomSection button {
+  margin-bottom: 32px;
+}
+
+.lineBackground {
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  .login > p {
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
+  .lineBackground p {
+    font-size: 10px;
+    line-height: 14px;
+    width: 104px;
+  }
+  .loginDetails {
+    display: block;
+    flex-wrap: wrap;
+  }
+  .loginDetails input {
+    width: 100%;
+  }
+  .bottomSection > button {
+    font-size: 18px;
+  }
+  a {
+    font-size: 12px;
+  }
+  label[for="rememberCheckbox"] {
+    font-size: 12px;
+  }
+  form {
+    margin-top: 24px;
+  }
+  .accountDoesntExist {
+    width: 396px;
+    height: 66px;
+    position: relative;
+    flex-shrink: 0;
+    margin: 80px 34px 0px 0px;
+    display: none;
+  }
+}
+@media (max-width: 1280px) {
+  .names {
+    display: block;
+    flex-wrap: wrap;
+  }
+  .names input {
+    width: 100%;
+  }
+  .bottomSection > button {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .lineBackground > p {
+    font-size: 10px;
+    line-height: 14px;
+    width: 104px;
+  }
+  i {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1020px) {
+  #rememberMeBox * {
+    font-size: 12px;
+  }
+  #rememberMeBox {
+    width: 100%;
+    gap: 20px;
+  }
+  .bottomSection > button {
+    padding: 24px 100px;
+  }
+}
+
+i {
+  margin-left: 5px;
+  margin-top: 10px;
+  color: gray;
+  cursor: pointer;
+  position: absolute;
+  left: 100%;
+}
