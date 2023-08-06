@@ -7,6 +7,9 @@ const pwShowHide = document.querySelectorAll(".pw_hide");
 
 const rememberMe = document.querySelector("#rememberMe");
 
+const notification = document.querySelector(".notification");
+const tick = document.querySelector(".uim-check");
+
 //show and hide password functionality
 pwShowHide.forEach((icon) => {
   icon.addEventListener("click", () => {
@@ -96,13 +99,42 @@ async function login(body) {
     const result = await response.json();
     console.log(result);
     if (result.message == "Unauthorized") {
-      console.log("blad"); //sprawdzic kiedy NIE istnieje uzytkownik i dodac '.accountDoesntExist label?
+      operationFailed();
     } else {
       localStorage.setItem("access_token", result.access_token);
-
-      window.location = "./profile.html";
+      operationSuccessful();
     }
   } catch (error) {
     console.error(error);
   }
 }
+
+const operationSuccessful = function () {
+  const main = document.querySelector("main");
+  const popUp = document.getElementById("popup");
+  const popUpTick = document.querySelector(".popup-tick");
+  const loader = document.querySelector(".loader");
+  main.classList.add("blur");
+  popUp.style.display = "block";
+  setTimeout(() => {
+    loader.style.display = "none";
+    popUpTick.style.display = "block";
+    setTimeout(() => {
+      window.location = "./profile.html";
+    }, 1000);
+  }, 2500);
+};
+
+const operationFailed = function () {
+  notification.classList.add("show");
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    notification.classList.add("show");
+    const loginDiv = document.querySelector(".login");
+    loginDiv.style.marginTop = "194px";
+  }
+  if (window.matchMedia("(min-width: 1020px)").matches) {
+    notification.classList.add("show");
+    const loginDiv = document.querySelector(".registration");
+    loginDiv.style.marginTop = "48px";
+  }
+};

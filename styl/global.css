@@ -298,6 +298,8 @@ input:focus {
 
 /* notification */
 .notification {
+  top: 20px;
+  left: -200px;
   position: absolute;
   z-index: 10;
   left: 0px;
@@ -313,7 +315,27 @@ input:focus {
   justify-content: left;
   margin-right: 14%;
   display: none;
+  animation-duration: 0.5s;
 }
+
+@keyframes slideInFromLeft {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -500px;
+  }
+}
+
 .notification > p {
   color: #ce0737;
   font-family: Rubik;
@@ -332,7 +354,12 @@ input:focus {
   text-decoration-line: underline;
 }
 .show {
+  animation-name: slideInFromLeft;
   display: block;
+}
+
+.notification.hide {
+  animation-name: slideOutToLeft;
 }
 /* tooltip */
 

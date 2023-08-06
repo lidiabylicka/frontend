@@ -188,17 +188,3 @@ const operationFailed = function (message) {
     registrationDiv.style.marginTop = "48px";
   }
 };
-
-// on the login page:
-// const loginDiv = document.querySelector(".login");
-// // in case of failure
-// const operationFailed = function () {
-//   notification.classList.add("show");
-//   //i want the following line of code to apply only to the @media (max-width: 600px):
-//   if (window.matchMedia("(max-width: 600px)").matches) {
-//     loginDiv.style.marginTop = "194px";
-//   }
-//   setTimeout(() => {
-//     notification.classList.remove("show");
-//   }, 3000);
-// };
