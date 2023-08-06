@@ -41,6 +41,11 @@ button {
   background-color: #fff;
   border-radius: 7px;
   height: 50px;
+  transition: transform 0.5s;
+}
+
+button:active {
+  transform: scale(0.9);
 }
 
 .left {

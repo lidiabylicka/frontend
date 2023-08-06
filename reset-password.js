@@ -39,7 +39,7 @@ function validateRecoveryForm() {
 // da sie? need to tap in to api FIRST
 async function sendRecoveryEmail() {
   try {
-    const emailToCheck = email.value;
+    // const emailToCheck = email.value;
     // const options = {
     //   method: "GET",
     //   headers: {
@@ -47,17 +47,21 @@ async function sendRecoveryEmail() {
     //     Authorization: `Bearer ${emailToCheck}`,
     //   },
     // };
-    const url = `${BASE_PROFILE_URL}?email=${encodeURIComponent(emailToCheck)}`;
-    const response = await fetch(url);
+    // const url = `${BASE_PROFILE_URL}?email=${encodeURIComponent(emailToCheck)}`;
+    // const response = await fetch(url);
 
-    if (!response.ok) {
-      // The email does not exist
-      console.error("Email not found or an error occurred.");
-      return;
-    }
-    const result = await response.json();
+    // if (!response.ok) {
+    // The email does not exist
+    //   console.error("Email not found or an error occurred.");
+    //   return;
+    // }
+    // const result = await response.json();
     window.location.href = "./reset-password-confirm.html";
   } catch (error) {
     console.error(error);
   }
+}
+
+function goToLogin() {
+  window.location.href = "./login.html";
 }
