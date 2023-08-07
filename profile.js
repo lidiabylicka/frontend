@@ -50,6 +50,7 @@ const next = document.getElementById("next");
 let currentIndex = 0;
 let userData;
 let totalUsers;
+let theUser;
 
 function browseOtherUsers(userData) {
   const theUser = new User(

@@ -59,7 +59,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
-  width: 80%;
 }
 .navigation button {
   min-width: 50px;
@@ -90,11 +89,15 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
 }
 
 /* extra-animation for userName */
 
 .hidden {
   opacity: 0;
+}
+@media (max-width: 600px) {
+  .browseUsers {
+    width: 100%;
+  }
 }
