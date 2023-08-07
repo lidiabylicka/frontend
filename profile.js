@@ -36,27 +36,67 @@ async function getUser() {
     const response = await fetch(BASE_PROFILE_URL, options);
     const result = await response.json();
     console.log(result);
-    browseOtherUsers(result);
+    userData = result;
+    browseOtherUsers(userData);
   } catch (error) {
     console.error("Error fetching user data:", error);
   }
 }
 
 const userName = document.getElementById("userName");
+const userCount = document.getElementById("userCount");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
-let usersData;
+let currentIndex = 0;
+let userData;
+let totalUsers;
 
 function browseOtherUsers(userData) {
-  userData.forEach((values, index) => {
-    let userToDisplay = "";
-    const theUser = new User(index + 1, values.firstName, values.lastName);
-    userToDisplay = theUser.displayMe();
-    userName.innerHTML = userToDisplay;
-  });
-  //just like swapi???
+  const theUser = new User(
+    `PA-PER00${currentIndex}`,
+    userData[currentIndex].firstName,
+    userData[currentIndex].lastName
+  );
+  const userToDisplay = theUser.displayMe();
+  userName.innerHTML = userToDisplay;
+
+  totalUsers = userData.length;
+  userCount.innerHTML = `User ${currentIndex + 1} out of ${totalUsers}`;
+
+  prev.disabled = currentIndex === 0;
 }
 
+prev.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    browseOtherUsers(userData);
+  }
+});
+
+next.addEventListener("click", () => {
+  const totalUsers = userData.length;
+  if (currentIndex < totalUsers - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  const insideContainer = document.querySelector(".inside-container");
+
+  insideContainer.classList.add("hidden");
+  insideContainer.addEventListener("transitionend", function () {
+    insideContainer.classList.remove("hidden");
+    insideContainer.innerHTML = theUser.displayMe();
+    outsideContainer.style.overflow = "hidden";
+
+    requestAnimationFrame(function () {
+      insideContainer.style.transition = "opacity 0.3s ease";
+      insideContainer.classList.remove("hidden");
+    });
+  });
+  browseOtherUsers(userData);
+});
+
+//rememberMe
 const rememberMe = localStorage.getItem("rememberMe");
 
 window.addEventListener("beforeunload", function () {
@@ -81,6 +121,7 @@ function logOut() {
   window.location.href = "./login.html";
 }
 
+//for users browsing:
 class User {
   constructor(index, firstName, lastName) {
     this.index = index;
