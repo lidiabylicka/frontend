@@ -80,17 +80,17 @@ next.addEventListener("click", () => {
   } else {
     currentIndex = 0;
   }
-  const insideContainer = document.querySelector(".inside-container");
+  const userName = document.querySelector("#userName");
 
-  insideContainer.classList.add("hidden");
-  insideContainer.addEventListener("transitionend", function () {
-    insideContainer.classList.remove("hidden");
-    insideContainer.innerHTML = theUser.displayMe();
+  userName.classList.add("hidden");
+  userName.addEventListener("transitionend", function () {
+    userName.classList.remove("hidden");
+    userName.innerHTML = theUser.displayMe();
     outsideContainer.style.overflow = "hidden";
 
     requestAnimationFrame(function () {
-      insideContainer.style.transition = "opacity 0.3s ease";
-      insideContainer.classList.remove("hidden");
+      userName.style.transition = "opacity 0.3s ease";
+      userName.classList.remove("hidden");
     });
   });
   browseOtherUsers(userData);

@@ -1,3 +1,5 @@
+/* test */
+
 .background {
   width: 100%;
   width: 100%;
@@ -52,15 +54,12 @@
   margin-top: 15px;
 }
 
-.browseUsers:hover {
-  border: 0.5px solid #e4b9ab;
-  border-radius: 7px;
-}
 .navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
+  width: 80%;
 }
 .navigation button {
   min-width: 50px;
@@ -76,6 +75,7 @@
   position: relative;
   overflow: hidden;
   padding: 7px;
+  width: 80%;
 }
 
 #userName {
@@ -85,6 +85,12 @@
   display: flex;
   text-align: center;
   justify-content: center;
+}
+#user-icon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
 }
 
 /* extra-animation for userName */
