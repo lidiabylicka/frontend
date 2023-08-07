@@ -12,6 +12,18 @@ if (!access_token) {
   getUser();
 }
 
+//for personal greeting
+const firstName = localStorage.getItem("firstName");
+const title = document.querySelector(".title");
+function greeting() {
+  if (firstName) {
+    title.innerHTML = `Welcome, ${firstName}!`;
+  } else {
+    title.innerHTML = `Welcome, User!`;
+  }
+}
+greeting();
+
 async function getUser() {
   const options = {
     method: "GET",
@@ -24,22 +36,26 @@ async function getUser() {
     const response = await fetch(BASE_PROFILE_URL, options);
     const result = await response.json();
     console.log(result);
+    browseOtherUsers(result);
   } catch (error) {
     console.error("Error fetching user data:", error);
   }
 }
 
-//for personal greeting
-const firstName = localStorage.getItem("firstName");
-const title = document.querySelector(".title");
-function greeting() {
-  if (firstName) {
-    title.innerHTML = `Welcome, ${firstName}!`;
-  } else {
-    title.innerHTML = `Welcome, User!`;
-  }
+const userName = document.getElementById("userName");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+let usersData;
+
+function browseOtherUsers(userData) {
+  userData.forEach((values, index) => {
+    let userToDisplay = "";
+    const theUser = new User(index + 1, values.firstName, values.lastName);
+    userToDisplay = theUser.displayMe();
+    userName.innerHTML = userToDisplay;
+  });
+  //just like swapi???
 }
-greeting();
 
 const rememberMe = localStorage.getItem("rememberMe");
 
@@ -63,4 +79,18 @@ function logOut() {
   localStorage.removeItem("firstName");
 
   window.location.href = "./login.html";
+}
+
+class User {
+  constructor(index, firstName, lastName) {
+    this.index = index;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  displayMe() {
+    return `<ul>
+      <ol>${this.firstName} ${this.lastName}</ol>
+      <ol> ID: ${this.index}</ol>
+    </ul>`;
+  }
 }
