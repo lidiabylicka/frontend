@@ -12,6 +12,11 @@ input[type="checkbox"]:checked {
   transition: 0.4s;
 }
 
+input:focus {
+  outline: 1px solid #e4b9ab;
+  color: #ff6939;
+}
+
 main {
   display: flex;
   overflow: hidden;
@@ -135,9 +140,6 @@ form input {
   color: #64606a;
   font-weight: 400;
   letter-spacing: 0.333px;
-}
-input:focus {
-  outline: 1px solid #284642;
 }
 
 @media (max-width: 1020px) and (min-width: 600px) {

@@ -88,9 +88,9 @@ class User {
     this.lastName = lastName;
   }
   displayMe() {
-    return `<ul>
-      <ol>${this.firstName} ${this.lastName}</ol>
-      <ol> ID: ${this.index}</ol>
-    </ul>`;
+    return `<div>
+      <p>${this.firstName} ${this.lastName}</p>
+      <p> ID: ${this.index}</p>
+    </div>`;
   }
 }

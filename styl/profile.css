@@ -19,6 +19,9 @@
   max-width: 528px;
 }
 
+.lineWrapper {
+  margin-bottom: 16px;
+}
 #goBack > a {
   color: #64606a;
 }
@@ -50,6 +53,14 @@
 #user-icon {
   margin-top: 15px;
 }
+.browseUsers {
+  padding: 7px;
+}
+
+.browseUsers:hover {
+  border: 0.5px solid #e4b9ab;
+  border-radius: 7px;
+}
 .navigation {
   display: flex;
   flex-direction: row;
@@ -58,4 +69,12 @@
 .navigation button {
   min-width: 50px;
   border-color: white;
+}
+#userName {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+ul {
+  text-align: center;
 }
