@@ -81,19 +81,6 @@ next.addEventListener("click", () => {
   } else {
     currentIndex = 0;
   }
-  const userName = document.querySelector("#userName");
-
-  userName.classList.add("hidden");
-  userName.addEventListener("transitionend", function () {
-    userName.classList.remove("hidden");
-    userName.innerHTML = theUser.displayMe();
-    outsideContainer.style.overflow = "hidden";
-
-    requestAnimationFrame(function () {
-      userName.style.transition = "opacity 0.3s ease";
-      userName.classList.remove("hidden");
-    });
-  });
   browseOtherUsers(userData);
 });
 
