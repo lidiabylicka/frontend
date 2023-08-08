@@ -96,3 +96,14 @@
 svg {
   width: 50%;
 }
+@media (max-width: 600px) {
+  #userContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #browseUsers {
+    width: 100%;
+  }
+}
