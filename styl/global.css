@@ -220,21 +220,13 @@ form input {
     display: block;
     margin-top: 80px;
   }
-  .popup {
-    max-width: 528px;
-    height: 200px;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 40%;
-    display: none;
-  }
 }
 @media (max-width: 1280px) {
   .lineBackground {
     width: 100%;
   }
 }
+
 .footer p {
   color: #64606a;
   font-size: 14px;

@@ -12,18 +12,6 @@ if (!access_token) {
   getUser();
 }
 
-//for personal greeting
-const firstName = localStorage.getItem("firstName");
-const title = document.querySelector(".title");
-function greeting() {
-  if (firstName) {
-    title.innerHTML = `Welcome, ${firstName}!`;
-  } else {
-    title.innerHTML = `Welcome, User!`;
-  }
-}
-greeting();
-
 async function getUser() {
   const options = {
     method: "GET",
@@ -42,6 +30,21 @@ async function getUser() {
     console.error("Error fetching user data:", error);
   }
 }
+
+//for personal greeting --> nie bedzie dzialac bo response przy logowaniu podaje tylko token i expiry date
+//musialabym miec dostep glebiej do back-endu???
+const firstName = localStorage.getItem("firstName");
+const title = document.querySelector(".title");
+function greeting() {
+  if (firstName === "undefined") {
+    title.innerHTML = `Welcome, User!`;
+  } else if (firstName) {
+    title.innerHTML = `Welcome, ${firstName}!`;
+  } else {
+    title.innerHTML = `Welcome, User!`;
+  }
+}
+greeting();
 
 const userName = document.getElementById("userName");
 const userCount = document.getElementById("userCount");

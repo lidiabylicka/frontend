@@ -98,10 +98,12 @@ async function login(body) {
     const response = await fetch(BASE_LOG_URL, options);
     const result = await response.json();
     console.log(result);
+
     if (result.message == "Unauthorized") {
       operationFailed();
     } else {
       localStorage.setItem("access_token", result.access_token);
+      // localStorage.setItem("firstName", result.firstName);
       operationSuccessful();
     }
   } catch (error) {
