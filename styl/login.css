@@ -67,7 +67,7 @@
   width: 100%;
   max-width: 528px;
   min-width: 250px;
-  padding: 24px 154px;
+  padding: 24px 0px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -219,7 +219,6 @@ a,
   .bottomSection > button {
     font-size: 18px;
     width: 100%;
-    padding: 24px 100px;
   }
 
   .lineBackground > p {
@@ -239,9 +238,6 @@ a,
   #rememberMeBox {
     width: 100%;
     gap: 20px;
-  }
-  .bottomSection > button {
-    padding: 24px 100px;
   }
 }
 
