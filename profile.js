@@ -81,6 +81,28 @@ next.addEventListener("click", () => {
   } else {
     currentIndex = 0;
   }
+
+  //Hammer.js found online for swipey events
+  const userName = document.getElementById("userName");
+  const hammer = new Hammer(userName);
+
+  hammer.on("swipeleft swiperight", (e) => {
+    if (e.type === "swipeleft") {
+      // Swipe left (next user)
+      const totalUsers = userData.length;
+      if (currentIndex < totalUsers - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+    } else if (e.type === "swiperight") {
+      // Swipe right (previous user)
+      if (currentIndex > 0) {
+        currentIndex--;
+      }
+    }
+    browseOtherUsers(userData);
+  }); //end of swipey events
   browseOtherUsers(userData);
 });
 
